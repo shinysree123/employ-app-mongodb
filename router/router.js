@@ -15,19 +15,14 @@ router.post('/insert',async(req,res)=>{
         var employdata= new employModel(req.body);
         var result= await employdata.save();
         res.json(result);
-        
     } catch (error) {
         console.log(error);
-    res.status(500).send(error);
-        
-    }
-                  
+    res.status(500).send(error);     }            
 });
 router.post('/viewall',async(req,res)=>{
     try {
         var result =await employModel.find();
         res.send(result);
-        
     } catch (error) {
         console.log(error);
     res.status(500).send(error);
